@@ -43,7 +43,7 @@ $(document).ready(function(){
     });
 
     var typed = new Typed(".typing-2", {
-        strings: ["Developer", "Designer", "Robotic Enthusiast"],
+        strings: ["Developer", "Designer", "Robotic Enthusiast" ],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
@@ -72,3 +72,21 @@ $(document).ready(function(){
         }
     });
 });
+
+    function sendEmail(){
+        Email.send({
+            Host : "smtp.gmail.com",
+            Username : "ibrahimaibade136@gmail.com",
+            Password : "ttzs1fln3",
+            To : 'ajibadeaishat136@gmail.com',
+            From : document.getElementById("email").value,
+            Subject : "New Contact Form From Your CV Enquiry",
+            Body : "Name: " + document.getElementById("name").value
+                + "<br> Email: " + document.getElementById("email").value
+                + "<br> Subjest: " + document.getElementById("subject").value
+                + "<br> Message: " + document.getElementById("message").value
+
+        }).then(
+          message => alert("Message Sent Succesfully")
+        );
+    }
